@@ -50,7 +50,11 @@ void AlbumDao::addAlbum(Album &newAlbum) const
  */
 void AlbumDao::updateAlbum(const Album &album)
 {
-
+    QSqlQuery query(mDatabase);
+    query.prepare("UPDATE albums SET name = :name WHERE id= :id");
+    query.bindValue(":name", album.name());
+    query.bindValue(":id", album.id());
+    query.exec();
 }
 
 /**
