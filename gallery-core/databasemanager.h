@@ -18,11 +18,12 @@ protected:
     DatabaseManager(const QString& path= DB_FILENAME);
     DatabaseManager& operator=(const DatabaseManager& rhs);
 
-public:
-    const AlbumDao albumDao;
 
 private:
     QSqlDatabase* mDatabase;
+
+public:
+    const AlbumDao albumDao;
 };
 
 #endif // DATABASEMANAGER_H

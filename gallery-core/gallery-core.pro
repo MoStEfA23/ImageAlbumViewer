@@ -28,12 +28,14 @@ SOURCES += \
         album.cpp \
     picture.cpp \
     databasemanager.cpp \
-    albumdao.cpp
+    albumdao.cpp \
+    picturedao.cpp
 
 HEADERS += \
         album.h \
         gallery-core_global.h \ 
     picture.h \
     databasemanager.h \
-    albumdao.h
+    albumdao.h \
+    picturedao.h
 

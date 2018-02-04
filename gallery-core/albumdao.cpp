@@ -74,20 +74,18 @@ void AlbumDao::removeAlbum(int albumId)
  * @brief AlbumDao::albums
  * @return
  */
-QVector<Album *> AlbumDao::albums()
+std::unique_ptr<std::vector<std::unique_ptr<Album> > > AlbumDao::albums() const
 {
-   QSqlQuery query("SELECT * FROM albums", mDatabase);
-   query.exec();
-   QVector<Album*> albums;
-
-   while (query.next()) {
-        Album* album = new Album();
-
+    QSqlQuery query("SELECT * FROM albums", mDatabase);
+    query.exec();
+    std::unique_ptr<std::vector<std::unique_ptr<Album>>> list(new std::vector<std::unique_ptr<Album>>());
+    while(query.next()) {
+        std::unique_ptr<Album> album(new Album());
         album->setId(query.value("id").toInt());
         album->setName(query.value("name").toString());
-
-        albums.append(album);
-   }
-
-   return albums;
+        list->push_back(std::move(album));
+    }
+    return list;
 }
+
+
