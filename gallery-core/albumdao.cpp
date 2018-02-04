@@ -43,3 +43,34 @@ void AlbumDao::addAlbum(Album &newAlbum) const
 
     newAlbum.setId(query.lastInsertId().toInt());
 }
+
+/**
+ * @brief AlbumDao::updateAlbum
+ * @param album
+ */
+void AlbumDao::updateAlbum(const Album &album)
+{
+
+}
+
+/**
+ * @brief AlbumDao::albums
+ * @return
+ */
+QVector<Album *> AlbumDao::albums()
+{
+   QSqlQuery query("SELECT * FROM albums", mDatabase);
+   query.exec();
+   QVector<Album*> albums;
+
+   while (query.next()) {
+        Album* album = new Album();
+
+        album->setId(query.value("id").toInt());
+        album->setName(query.value("name").toString());
+
+        albums.append(album);
+   }
+
+   return albums;
+}
