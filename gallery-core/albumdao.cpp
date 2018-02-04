@@ -58,6 +58,19 @@ void AlbumDao::updateAlbum(const Album &album)
 }
 
 /**
+ * @brief AlbumDao::removeAlbum
+ * @param albumId
+ */
+void AlbumDao::removeAlbum(int albumId)
+{
+   QSqlQuery query(mDatabase);
+   query.prepare("DELETE FROM albums WHERE id= :id");
+   query.bindValue(":id", albumId);
+
+   query.exec();
+}
+
+/**
  * @brief AlbumDao::albums
  * @return
  */
