@@ -57,7 +57,7 @@ void PictureDao::addPictureInAlbum(int albumId, Picture &picture) const
  * @brief PictureDao::removePicture
  * @param pictureId
  */
-void PictureDao::removePicture(int pictureId)
+void PictureDao::removePicture(int pictureId) const
 {
     QSqlQuery query(mDatabase);
     query.prepare("DELETE pictures where id = :id");
@@ -70,7 +70,7 @@ void PictureDao::removePicture(int pictureId)
  * @brief PictureDao::removePicturesForAlbum
  * @param albumId
  */
-void PictureDao::removePicturesForAlbum(int albumId)
+void PictureDao::removePicturesForAlbum(int albumId) const
 {
     QSqlQuery query(mDatabase);
     query.prepare("DELETE FROM pictures WHERE album_id = :albumd_id");

@@ -14,8 +14,8 @@ public:
     void init() const;
 
     void addAlbum(Album& newAlbum) const;
-    void updateAlbum(const Album &album);
-    void removeAlbum(int albumId);
+    void updateAlbum(const Album &album) const;
+    void removeAlbum(int albumId) const;
     std::unique_ptr<std::vector<std::unique_ptr<Album>>> albums() const;
 
 private:

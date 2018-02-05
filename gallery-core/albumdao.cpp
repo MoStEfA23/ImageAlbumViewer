@@ -48,7 +48,7 @@ void AlbumDao::addAlbum(Album &newAlbum) const
  * @brief AlbumDao::updateAlbum
  * @param album
  */
-void AlbumDao::updateAlbum(const Album &album)
+void AlbumDao::updateAlbum(const Album &album) const
 {
     QSqlQuery query(mDatabase);
     query.prepare("UPDATE albums SET name = :name WHERE id= :id");
@@ -61,7 +61,7 @@ void AlbumDao::updateAlbum(const Album &album)
  * @brief AlbumDao::removeAlbum
  * @param albumId
  */
-void AlbumDao::removeAlbum(int albumId)
+void AlbumDao::removeAlbum(int albumId) const
 {
    QSqlQuery query(mDatabase);
    query.prepare("DELETE FROM albums WHERE id= :id");
