@@ -27,7 +27,7 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     bool removeRows(int row, int count, const QModelIndex &parent) override;
 
-    void setAlbumId(int id);
+    Q_INVOKABLE void setAlbumId(int id);
     void clearAlbum();
 
     QHash<int, QByteArray> roleNames() const;

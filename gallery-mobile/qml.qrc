@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>AlbumListPage.qml</file>
+        <file>Style.qml</file>
+        <file>ToolBarTheme.qml</file>
+        <file>PageTheme.qml</file>
+        <file>res/back-arrow.svg</file>
+        <file>qmldir</file>
+    </qresource>
+</RCC>

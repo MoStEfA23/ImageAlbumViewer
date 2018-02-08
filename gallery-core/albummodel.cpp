@@ -56,8 +56,10 @@ QVariant AlbumModel::data(const QModelIndex &index, int role) const
     switch (role) {
     case IdRole:
         return album.id();
+        break;
     case NameRole:
         return album.name();
+        break;
     default:
         return QVariant();
     }
