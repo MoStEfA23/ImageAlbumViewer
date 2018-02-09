@@ -9,6 +9,7 @@ Page {
     property alias toolbarButtons: buttonsLoader.sourceComponent
     property alias toolbarTitle: titleLabel.text
 
+
     header: ToolBarTheme{
         RowLayout{
             anchors.fill: parent

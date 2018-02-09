@@ -29,6 +29,16 @@ QModelIndex AlbumModel::addAlbum(const Album &album)
     return index(rowIndex, 0);
 }
 
+
+/**
+ * @brief AlbumModel::addAlbumFromName
+ * @param name
+ */
+void AlbumModel::addAlbumFromName(const QString &name)
+{
+   addAlbum(Album(name));
+}
+
 /**
  * @brief AlbumModel::rowCount
  * @return

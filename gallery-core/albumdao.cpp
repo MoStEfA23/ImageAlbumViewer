@@ -6,6 +6,7 @@
 #include <QVariant>
 
 #include "album.h"
+#include "databasemanager.h"
 
 const QString ALBUM_DATABASENAME = "albums";
 /**
@@ -27,6 +28,7 @@ void AlbumDao::init() const
     {
         QSqlQuery query(mDatabase);
         query.exec("CREATE TABLE albums (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)");
+        DatabaseManager::debugQuery(query);
     }
 }
 
@@ -37,11 +39,12 @@ void AlbumDao::init() const
 void AlbumDao::addAlbum(Album &newAlbum) const
 {
     QSqlQuery query(mDatabase);
-    query.prepare("INSERT INTO albums name values (:name)");
+    query.prepare("INSERT INTO albums (name) values (:name)");
     query.bindValue(":name", newAlbum.name());
     query.exec();
 
     newAlbum.setId(query.lastInsertId().toInt());
+    DatabaseManager::debugQuery(query);
 }
 
 /**
@@ -55,6 +58,8 @@ void AlbumDao::updateAlbum(const Album &album) const
     query.bindValue(":name", album.name());
     query.bindValue(":id", album.id());
     query.exec();
+
+    DatabaseManager::debugQuery(query);
 }
 
 /**
@@ -68,6 +73,7 @@ void AlbumDao::removeAlbum(int albumId) const
    query.bindValue(":id", albumId);
 
    query.exec();
+   DatabaseManager::debugQuery(query);
 }
 
 /**

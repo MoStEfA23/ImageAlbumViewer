@@ -2,6 +2,7 @@
 #define DATABASEMANAGER_H
 
 #include <QString>
+#include <QtSql/qsqlquery.h>
 
 #include "albumdao.h"
 #include "picturedao.h"
@@ -13,6 +14,7 @@ class DatabaseManager
 {
 public:
     static DatabaseManager& instance();
+    static void debugQuery(QSqlQuery query);
     ~DatabaseManager();
 
 protected:
