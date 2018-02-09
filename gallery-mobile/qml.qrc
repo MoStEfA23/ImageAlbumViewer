@@ -7,5 +7,12 @@
         <file>PageTheme.qml</file>
         <file>res/back-arrow.svg</file>
         <file>qmldir</file>
+        <file>InputDialog.qml</file>
+        <file>res/icons/album-add.svg</file>
+        <file>res/icons/album-delete.svg</file>
+        <file>res/icons/album-edit.svg</file>
+        <file>res/icons/back.svg</file>
+        <file>res/icons/photo-add.svg</file>
+        <file>res/icons/photo-delete.svg</file>
     </qresource>
 </RCC>
