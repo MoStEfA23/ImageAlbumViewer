@@ -4,6 +4,8 @@
 #include "albummodel.h"
 #include "picturedao.h"
 
+#include <QDebug>
+
 /**
  * @brief PictureModel::PictureModel
  * @param albumModel
@@ -111,6 +113,7 @@ bool PictureModel::removeRows(int row, int count, const QModelIndex &parent)
  */
 void PictureModel::setAlbumId(int id)
 {
+    qDebug() << "id" << id;
     beginResetModel();
     mAlbumId = id;
     loadPictures(id);

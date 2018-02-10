@@ -2,6 +2,7 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>AlbumListPage.qml</file>
+        <file>AlbumPage.qml</file>
         <file>Style.qml</file>
         <file>ToolBarTheme.qml</file>
         <file>PageTheme.qml</file>
@@ -14,5 +15,6 @@
         <file>res/icons/back.svg</file>
         <file>res/icons/photo-add.svg</file>
         <file>res/icons/photo-delete.svg</file>
+        <file>PicturePage.qml</file>
     </qresource>
 </RCC>

@@ -14,6 +14,7 @@ class DatabaseManager;
 
 class GALLERYCORESHARED_EXPORT PictureModel : public QAbstractListModel
 {
+    Q_OBJECT
 public:
     enum PictureRole{
         UrlRole = Qt::UserRole + 1,

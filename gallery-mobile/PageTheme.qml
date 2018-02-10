@@ -15,7 +15,7 @@ Page {
             anchors.fill: parent
             ToolButton{
                 background: Image {
-                    source: "qrc:/res/back-arrow.svg"
+                    source: "qrc:/res/icons/back.svg"
                     width: 40
                     height: 40
                 }

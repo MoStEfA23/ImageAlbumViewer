@@ -4,6 +4,7 @@
 
 #include "albummodel.h"
 #include "picturemodel.h"
+#include "pictureimageprovider.h"
 
 int main(int argc, char *argv[])
 {
@@ -19,9 +20,11 @@ int main(int argc, char *argv[])
     PictureModel pictureModel(albumModel);
 
     QQmlContext* context = engine.rootContext();
+    context->setContextProperty("thumbnailsize", PictureImageProvider::THUMBNAIL_SIZE.width());
     context->setContextProperty("albumModel", &albumModel);
     context->setContextProperty("pictureModel", &pictureModel);
 
+    engine.addImageProvider("Pictures", new PictureImageProvider(&pictureModel));
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
