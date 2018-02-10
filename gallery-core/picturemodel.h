@@ -33,6 +33,8 @@ public:
 
     QHash<int, QByteArray> roleNames() const;
 
+    Q_INVOKABLE void addPictureFromUrl(const QUrl& url);
+
 public slots:
     void deletePicturesForAlbum();
 

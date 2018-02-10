@@ -141,6 +141,15 @@ QHash<int, QByteArray> PictureModel::roleNames() const
 }
 
 /**
+ * @brief PictureModel::addPictureFromUrl
+ * @param url
+ */
+void PictureModel::addPictureFromUrl(const QUrl &url)
+{
+    addPicture(Picture(url));
+}
+
+/**
  * @brief PictureModel::deletePicturesForAlbum
  */
 void PictureModel::deletePicturesForAlbum()

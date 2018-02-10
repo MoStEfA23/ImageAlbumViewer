@@ -31,7 +31,7 @@ PageTheme {
             property int itemIndex: index
             property string itemName: name
 
-            width: ListView.view.width == 0 ?
+            width: ListView.view.width === 0 ?
                    parent.width : ListView.view.width
             height: pictureListView.height
             color: "transparent"
