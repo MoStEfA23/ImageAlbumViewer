@@ -29,8 +29,10 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;
-    Q_INVOKABLE bool removeRows(int row, int count, const QModelIndex &parent) override;
+    Q_INVOKABLE bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
     QHash<int, QByteArray> roleNames() const override;
+
+    Q_INVOKABLE void rename(const int row, const QString& newName);
 
 private:
     bool isIndexValid(const QModelIndex& modelIndex) const;

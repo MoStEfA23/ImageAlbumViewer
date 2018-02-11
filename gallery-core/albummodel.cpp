@@ -136,6 +136,15 @@ QHash<int, QByteArray> AlbumModel::roleNames() const
     return roles;
 }
 
+/**
+ * @brief AlbumModel::rename
+ * @param newName
+ */
+void AlbumModel::rename(const int row, const QString &newName)
+{
+   setData(index(row), newName, Roles::NameRole);
+}
+
 bool AlbumModel::isIndexValid(const QModelIndex &index) const
 {
     if (index.row() < 0 ||
