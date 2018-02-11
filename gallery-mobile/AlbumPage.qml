@@ -76,7 +76,7 @@ PageTheme {
             color: "transparent"
 
             Image {
-                id: thumbnail
+                id: name
                 anchors.fill: parent
                 fillMode: Image.PreserveAspectFit
                 cache: false
@@ -86,7 +86,7 @@ PageTheme {
                 anchors.fill: parent
                 onClicked: {
                     thumbnailList.currentIndex = index
-                    pageStack.push("qrc:/qml/PicturePage.qml", { pictureName: name, pictureIndex: index })
+                    pageStack.push("qrc:/PicturePage.qml", { pictureName: name, pictureIndex: index })
                 }
             }
         }
