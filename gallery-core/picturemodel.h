@@ -26,7 +26,7 @@ public:
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role) const override;
-    bool removeRows(int row, int count, const QModelIndex &parent) override;
+    Q_INVOKABLE bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
 
     Q_INVOKABLE void setAlbumId(int id);
     void clearAlbum();
