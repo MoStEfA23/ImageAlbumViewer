@@ -3,6 +3,8 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QDebug>
+#include <QFile>
+#include <QStandardPaths>
 
 /**
  * @brief DatabaseManager::instance
@@ -10,7 +12,22 @@
  */
 DatabaseManager &DatabaseManager::instance()
 {
+#if defined(Q_OS_ANDROID)
+    QFile dbFile(":/database/"+ DB_FILENAME);
+    QString destination = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation).
+            append("/" + DB_FILENAME );
+
+    if(QFile::exists(destination))
+    {
+        dbFile.copy(destination);
+        QFile::setPermissions(destination,
+                        QFile::WriteOwner | QFile::ReadOwner);
+    }
+
+    static DatabaseManager singleton(destination);
+#else
     static DatabaseManager singleton;
+#endif
     return singleton;
 }
 

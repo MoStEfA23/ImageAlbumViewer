@@ -16,5 +16,6 @@
         <file>res/icons/photo-add.svg</file>
         <file>res/icons/photo-delete.svg</file>
         <file>PicturePage.qml</file>
+        <file>database/gallery.db</file>
     </qresource>
 </RCC>
